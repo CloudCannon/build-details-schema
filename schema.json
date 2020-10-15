@@ -1,0 +1,112 @@
+{
+	"$id": "https://raw.githubusercontent.com/CloudCannon/build-details-schema/v0.0.1/schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"title": "CloudCannon build details",
+	"description": "Normalised configuration format for sites across different static site generators",
+	"properties": {
+		"time": {
+			"type": "string",
+			"description": "The time this file was created",
+			"format": "date-time"
+		},
+
+		"cloudcannon": {
+			"name": {
+				"type": "string",
+				"description": "The name of the plugin or extension that created this file"
+			},
+			"version": {
+				"type": "string",
+				"description": "The version of the plugin or extension that created this file",
+				"pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+			}
+		},
+
+		"generator": {
+			"name": {
+				"type": "string",
+				"description": "The name of the SSG that builds the site relating to this file"
+			},
+			"version": {
+				"type": "string",
+				"description": "The version of the SSG that builds the site relating to this file",
+				"pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+			},
+			"environment": {
+				"type": "string,null",
+				"description": "The environment in which the site was built"
+			},
+			"metadata": {
+				"type": "object",
+				"description": "Metadata about some of the tools used to build this site",
+				"additionalProperties": {
+					"markdown": {
+						"type": "string",
+						"description": "The markdown used to render the markdown"
+					}
+				}
+			}
+		},
+		"collections": {
+			"type": "array",
+			"description": "Supporting information about the structured content groups on your site",
+			"additionalProperties": {
+				"type": "array",
+				"properties": {
+					"path": {
+						"type": "string",
+						"format": "uri-reference",
+						"description": "The path to the file"
+					},
+					"url": {
+						"type": "string",
+						"format": "uri-reference",
+						"description": "The file's url in the site"
+					}
+				}
+
+			}
+		},
+		"pages": {
+			"type": "array",
+			"description": "Standalone pages",
+			"items": {
+				"additionalProperties": {
+					"dir": {
+						"type": "string",
+						"description": "The directory of the page"
+					},
+					"name": {
+						"type": "string",
+						"description": "The name of the page"
+					},
+					"path": {
+						"type": "string",
+						"description": "The page to the page"
+					},
+					"url": {
+						"type": "string",
+						"description": "The url to the page"
+					}
+				}
+			}
+		},
+		"staticPages": {
+			"type": "string",
+			"format": "uri-reference",
+			"description": "HTML files with no frontmatter"
+		},
+		"baseurl": {
+			"type": "string,null",
+			"description": "The path in your site URL after the domain and before the rest",
+			"format": "uri-reference"
+		},
+		"files": {
+			"propertyNames": {
+				"format": "uri-reference"
+			},
+			"additionalProperties": { "type": "string" }
+		}
+	}
+}
