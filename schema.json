@@ -68,7 +68,7 @@
 							"type": "string",
 							"description": "Name reference to the containing collection"
 						}
-					}
+					},
 					"additionalProperties": {
 						"title": {
 							"type": "string",
@@ -113,7 +113,7 @@
 		},
 		"static-pages": {
 			"type": "array",
-			"description": "HTML files with no front matter"
+			"description": "HTML files with no front matter",
 			"items": {
 				"type": "object",
 				"properties": {
