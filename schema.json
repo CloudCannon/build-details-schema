@@ -70,9 +70,25 @@
 						}
 					},
 					"additionalProperties": {
+						"name": {
+							"type": "string",
+							"description": "Used as a label for this file within the editor."
+						},
 						"title": {
 							"type": "string",
-							"description": "Title for the content in the file"
+							"description": "Title for the content in the file. Used in place of name if name is unset or same as filename."
+						},
+						"_unlisted": {
+							"type": "boolean",
+							"description": "Hides this item within the editor. Defaults to false if unset."
+						},
+						"output": {
+							"type": "boolean",
+							"description": "Indicates whether or not this file is in the build output. Defaults to true if unset."
+						},
+						"published": {
+							"type": "boolean",
+							"description": "Indicates if this file is published or a draft. Defaults to true if unset."
 						},
 						"_options": {
 							"type": "object",
@@ -106,7 +122,31 @@
 				"additionalProperties": {
 					"name": {
 						"type": "string",
-						"description": "The name of the page"
+						"description": "Used as a label for this file within the editor."
+					},
+					"title": {
+						"type": "string",
+						"description": "Title for the content in the file. Used in place of name if name is unset or same as filename."
+					},
+					"_unlisted": {
+						"type": "boolean",
+						"description": "Hides this item within the editor. Defaults to false if unset."
+					},
+					"output": {
+						"type": "boolean",
+						"description": "Indicates whether or not this file is in the build output. Defaults to true if unset."
+					},
+					"published": {
+						"type": "boolean",
+						"description": "Indicates if this file is published or a draft. Defaults to true if unset."
+					},
+					"_options": {
+						"type": "object",
+						"description": "CloudCannon input options to configure front matter inputs for this file"
+					},
+					"_comments": {
+						"type": "object",
+						"description": "CloudCannon comments to set helper labels for front matter inputs for this file"
 					}
 				}
 			}
