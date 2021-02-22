@@ -102,6 +102,14 @@
 				}
 			}
 		},
+		"data": {
+			"type": "object",
+			"description": "Raw data parts of the structured content",
+			"additionalProperties": {
+				"type": "object,array",
+				"description": "The data itself"
+			}
+		},
 		"pages": {
 			"type": "array",
 			"description": "Standalone pages",
