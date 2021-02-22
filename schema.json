@@ -3,70 +3,70 @@
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"type": "object",
 	"title": "CloudCannon build details",
-	"description": "Normalised build output format for sites across different static site generators",
+	"description": "Normalised build output format for sites across different static site generators.",
 	"properties": {
 		"time": {
 			"type": "string",
-			"description": "The time this file was created",
+			"description": "The time this file was created.",
 			"format": "date-time"
 		},
 		"cloudcannon": {
 			"name": {
 				"type": "string",
-				"description": "The name of the plugin or extension that created this file"
+				"description": "The name of the plugin or extension that created this file."
 			},
 			"version": {
 				"type": "string",
-				"description": "The version of the plugin or extension that created this file",
+				"description": "The version of the plugin or extension that created this file.",
 				"pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
 			}
 		},
 		"generator": {
 			"name": {
 				"type": "string",
-				"description": "The name of the static site generator used to build the site"
+				"description": "The name of the static site generator used to build the site."
 			},
 			"version": {
 				"type": "string",
-				"description": "The version of the static site generator used to build the site",
+				"description": "The version of the static site generator used to build the site.",
 				"pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
 			},
 			"environment": {
 				"type": "string,null",
-				"description": "The environment in which the site was built"
+				"description": "The environment in which the site was built."
 			},
 			"metadata": {
 				"type": "object",
-				"description": "Metadata about some of the tools used to build this site",
+				"description": "Metadata about some of the tools used to build this site.",
 				"additionalProperties": {
 					"markdown": {
 						"type": "string",
-						"description": "The engine used to render markdown files"
+						"description": "The engine used to render markdown files."
 					}
 				}
 			}
 		},
 		"collections": {
 			"type": "object",
-			"description": "Supporting information about the structured content groups on your site",
+			"description": "Supporting information about the structured content groups on your site.",
 			"additionalProperties": {
 				"type": "array",
-				"description": "A structured content group of files",
+				"description": "A structured content group of files.",
 				"items": {
 					"properties": {
 						"path": {
 							"type": "string",
 							"format": "uri-reference",
-							"description": "The source path to the file"
+							"description": "The source path to the file."
 						},
 						"url": {
 							"type": "string",
 							"format": "uri-reference",
-							"description": "The output URL for the file"
+							"description": "The output URL for the file."
 						},
 						"collection": {
 							"type": "string",
-							"description": "Name reference to the containing collection"
+							"description": "Name reference to the containing collection."
 						}
 					},
 					"additionalProperties": {
@@ -92,11 +92,11 @@
 						},
 						"_options": {
 							"type": "object",
-							"description": "CloudCannon input options to configure front matter inputs for this file"
+							"description": "CloudCannon input options to configure front matter inputs for this file."
 						},
 						"_comments": {
 							"type": "object",
-							"description": "CloudCannon comments to set helper labels for front matter inputs for this file"
+							"description": "CloudCannon comments to set helper labels for front matter inputs for this file."
 						}
 					}
 				}
@@ -104,27 +104,27 @@
 		},
 		"data": {
 			"type": "object",
-			"description": "Raw data parts of the structured content",
+			"description": "Raw data parts of the structured content.",
 			"additionalProperties": {
 				"type": "object,array",
-				"description": "The data itself"
+				"description": "The data itself."
 			}
 		},
 		"pages": {
 			"type": "array",
-			"description": "Standalone pages",
+			"description": "Standalone pages.",
 			"items": {
 				"type": "object",
 				"properties": {
 					"path": {
 						"type": "string",
 						"format": "uri-reference",
-						"description": "The source path of the page"
+						"description": "The source path of the page."
 					},
 					"url": {
 						"type": "string",
 						"format": "uri-reference",
-						"description": "The output URL for the page"
+						"description": "The output URL for the page."
 					}
 				},
 				"additionalProperties": {
@@ -150,30 +150,30 @@
 					},
 					"_options": {
 						"type": "object",
-						"description": "CloudCannon input options to configure front matter inputs for this file"
+						"description": "CloudCannon input options to configure front matter inputs for this file."
 					},
 					"_comments": {
 						"type": "object",
-						"description": "CloudCannon comments to set helper labels for front matter inputs for this file"
+						"description": "CloudCannon comments to set helper labels for front matter inputs for this file."
 					}
 				}
 			}
 		},
 		"static-pages": {
 			"type": "array",
-			"description": "HTML files with no front matter",
+			"description": "HTML files with no front matter.",
 			"items": {
 				"type": "object",
 				"properties": {
 					"path": {
 						"type": "string",
 						"format": "uri-reference",
-						"description": "The source path of the page"
+						"description": "The source path of the page."
 					},
 					"url": {
 						"type": "string",
 						"format": "uri-reference",
-						"description": "The output URL for the page"
+						"description": "The output URL for the page."
 					}
 				}
 			}
